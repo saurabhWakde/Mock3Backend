@@ -8,7 +8,8 @@ const bcrypt = require('bcrypt');
 
 
 const secretKey = '1234';
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000
+;
 
 app.use(cors());
 app.use(bodyParser.json());
