@@ -14,8 +14,10 @@ const port = process.env.PORT || 3000
 app.use(cors());
 app.use(bodyParser.json());
 
-
-mongoose.connect('mongodb+srv://saurabhwakde430:beX4GzwBzEJIMjGd@cluster0.hj7qqxp.mongodb.net/Empolyee', { useNewUrlParser: true, useUnifiedTopology: true });
+const config = {
+    dbUri: 'mongodb+srv://saurabhwakde430:beX4GzwBzEJIMjGd@cluster0.hj7qqxp.mongodb.net/Empolyee',
+  };
+mongoose.connect(config.dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
